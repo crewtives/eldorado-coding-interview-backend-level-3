@@ -5,7 +5,7 @@
   "type": "module",
   "main": "src/index.ts",
   "scripts": {
-    "test": "jest e2e",
+    "test": "NODE_ENV=test && jest e2e --coverage",
     "start": "ts-node src/index.ts",
     "dev": "nodemon"
   },
@@ -24,6 +24,7 @@
   "dependencies": {
     "@hapi/hapi": "^21.3.10",
     "@prisma/client": "^6.7.0",
+    "@quramy/prisma-fabbrica": "^2.2.3",
     "prisma": "^6.7.0"
   }
 }

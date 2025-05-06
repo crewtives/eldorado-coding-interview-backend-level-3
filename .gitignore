@@ -1,3 +1,5 @@
 node_modules
 mock.ts
 .env
+.env.*
+coverage

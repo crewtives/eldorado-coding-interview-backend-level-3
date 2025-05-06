@@ -23,8 +23,12 @@
   },
   "dependencies": {
     "@hapi/hapi": "^21.3.10",
+    "@hapi/inert": "^7.1.0",
+    "@hapi/vision": "^7.0.3",
     "@prisma/client": "^6.7.0",
     "@quramy/prisma-fabbrica": "^2.2.3",
+    "hapi-swagger": "^17.3.2",
+    "joi": "^17.13.3",
     "prisma": "^6.7.0"
   }
 }

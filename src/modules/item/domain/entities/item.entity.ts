@@ -53,4 +53,12 @@ export class Item {
     this._price = newPrice
     this._updatedAt = new Date()
   }
+
+  toJSON() {
+    return {
+      id: this._id,
+      name: this._name,
+      price: this._price,
+    }
+  }
 }

@@ -1,5 +1,6 @@
 import Hapi from '@hapi/hapi'
 import { defineRoutes } from './routes'
+import { logger } from './shared/logger'
 
 const getServer = () => {
     const server = Hapi.server({
@@ -21,6 +22,6 @@ export const initializeServer = async () => {
 export const startServer = async () => {
     const server = getServer()
     await server.start()
-    console.log(`✅ Server running on ${server.info.uri}`)
+    logger.info(`✅ Server running on ${server.info.uri}`)
     return server
 }

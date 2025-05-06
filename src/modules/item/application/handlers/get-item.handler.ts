@@ -1,4 +1,5 @@
 import { Item } from '../../domain/entities/item.entity'
+import { ItemNotFoundException } from '../../domain/exceptions/item-not-found.exception'
 import { ItemRepository } from '../../domain/repositories/item.repository'
 
 export class GetItemHandler {
@@ -8,7 +9,7 @@ export class GetItemHandler {
     const item = await this.itemRepository.findById(id)
 
     if (!item) {
-      throw new Error(`Item with ID "${id}" not found`)
+      throw new ItemNotFoundException()
     }
 
     return item

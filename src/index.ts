@@ -1,8 +1,13 @@
-import { initializeServer, startServer } from "./server"
+import { startServer } from './server'
+import { logger } from './shared/logger'
+
+process.on('uncaughtException', (err) => {
+    logger.error('Uncaught Exception', err)
+})
 
 process.on('unhandledRejection', (err) => {
-    console.error(err)
-    process.exit(1)
+    logger.error('Unhandled Rejection', err)
 })
 
 await startServer()
+logger.info('🚀 Server started')

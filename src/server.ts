@@ -21,6 +21,6 @@ export const initializeServer = async () => {
 export const startServer = async () => {
     const server = getServer()
     await server.start()
-    console.log(`Server running on ${server.info.uri}`)
+    console.log(`✅ Server running on ${server.info.uri}`)
     return server
-};
+}

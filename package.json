@@ -2,9 +2,12 @@
   "name": "coding-interview-backend-level-3",
   "version": "1.0.0",
   "description": "Coding Interview Backend Level 3",
+  "type": "module",
   "main": "src/index.ts",
   "scripts": {
-    "test": "jest e2e"
+    "test": "jest e2e",
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon"
   },
   "author": "El Dorado Dev Team",
   "license": "ISC",
@@ -14,9 +17,13 @@
     "@types/jest": "^29.5.12",
     "jest": "^29.7.0",
     "mocha": "^10.7.0",
-    "typescript": "^5.5.4"
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@hapi/hapi": "^21.3.10"
+    "@hapi/hapi": "^21.3.10",
+    "@prisma/client": "^6.7.0",
+    "prisma": "^6.7.0"
   }
 }

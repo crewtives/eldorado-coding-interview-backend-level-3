@@ -1,8 +1,10 @@
-// See https://containers.dev/implementors/json_reference/ for configuration reference
 {
-	"name": "Coding Interview Backend Level 3",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
+  "name": "Eldorado Backend Dev",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "npm install && npx prisma generate && npx prisma migrate dev",
+  "postStartCommand": "npm run dev",
+  "forwardPorts": [3000],
   "remoteUser": "node"
 }

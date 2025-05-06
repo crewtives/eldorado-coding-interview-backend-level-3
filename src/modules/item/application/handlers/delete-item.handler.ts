@@ -1,9 +1,9 @@
 import { ItemRepository } from '../../domain/repositories/item.repository'
 
 export class DeleteItemHandler {
-  constructor(private readonly itemRepository: ItemRepository) {}
+  constructor(private readonly itemRepository: ItemRepository) { }
 
-  async execute(id: string): Promise<void> {
+  async execute(id: number): Promise<void> {
     const item = await this.itemRepository.findById(id)
 
     if (!item) {

@@ -27,7 +27,7 @@ export class PrismaItemRepository implements ItemRepository {
         return new Item(data)
     }
 
-    async findById(id: string): Promise<Item | null> {
+    async findById(id: number): Promise<Item | null> {
         const data = await prisma.item.findUnique({ where: { id } })
         return data ? new Item(data) : null
     }
@@ -37,7 +37,7 @@ export class PrismaItemRepository implements ItemRepository {
         return items.map((item) => new Item(item))
     }
 
-    async delete(id: string): Promise<void> {
+    async delete(id: number): Promise<void> {
         await prisma.item.delete({ where: { id } })
     }
 }

@@ -3,9 +3,9 @@ import { Item } from '../../domain/entities/item.entity'
 import { UpdateItemDTO } from '../dtos/update-item.dto'
 
 export class UpdateItemHandler {
-  constructor(private readonly itemRepository: ItemRepository) {}
+  constructor(private readonly itemRepository: ItemRepository) { }
 
-  async execute(id: string, data: UpdateItemDTO): Promise<Item> {
+  async execute(id: number, data: UpdateItemDTO): Promise<Item> {
     const item = await this.itemRepository.findById(id)
 
     if (!item) {

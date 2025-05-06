@@ -13,20 +13,20 @@ export const listItems = async (_request: Request, h: ResponseToolkit) => {
 }
 
 export const getItem = async (request: Request, h: ResponseToolkit) => {
-    const { id } = request.params as { id: string }
+    const { id } = request.params as { id: number }
     const item = await getItemHandler.execute(id)
     return h.response(item).code(200)
 }
 
 export const updateItem = async (request: Request, h: ResponseToolkit) => {
-    const { id } = request.params as { id: string }
+    const { id } = request.params as { id: number }
     const { name, price } = request.payload as { name?: string; price?: number }
     const updated = await updateItemHandler.execute(id, { name, price })
     return h.response(updated).code(200)
 }
 
 export const deleteItem = async (request: Request, h: ResponseToolkit) => {
-    const { id } = request.params as { id: string }
+    const { id } = request.params as { id: number }
     await deleteItemHandler.execute(id)
     return h.response().code(204)
 }

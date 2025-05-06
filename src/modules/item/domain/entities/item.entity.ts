@@ -1,12 +1,12 @@
 export class Item {
-  private readonly _id: string
+  private readonly _id?: number
   private _name: string
   private _price: number
   private readonly _createdAt: Date
   private _updatedAt: Date
 
   constructor(params: {
-    id: string
+    id?: number
     name: string
     price: number
     createdAt?: Date
@@ -16,7 +16,7 @@ export class Item {
       throw new Error("Price cannot be negative")
     }
 
-    this._id = params.id
+    this._id = params?.id
     this._name = params.name
     this._price = params.price
     this._createdAt = params.createdAt ?? new Date()

@@ -1,14 +1,12 @@
 import { CreateItemDTO } from '../dtos/create-item.dto'
 import { Item } from '../../domain/entities/item.entity'
 import { ItemRepository } from '../../domain/repositories/item.repository'
-import { randomUUID } from 'crypto'
 
 export class CreateItemHandler {
   constructor(private readonly itemRepository: ItemRepository) { }
 
   async execute(data: CreateItemDTO): Promise<Item> {
     const item = new Item({
-      id: randomUUID(),
       name: data.name,
       price: data.price,
     })
